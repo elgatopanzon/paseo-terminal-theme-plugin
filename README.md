@@ -1,8 +1,10 @@
-# Paseo Terminal 256 Theme
+# Terminal 256
 
 A Paseo 0.5.2 plugin that contributes the **Terminal 256** dark theme. Its
 colors are selected from the standard xterm-256 palette, with a black canvas,
 phosphor-green accent, dark-gray focus details, and grayscale surfaces.
+
+![Terminal 256 theme running in Paseo](assets/terminal-256-theme-preview.png)
 
 On web and desktop-web clients, selecting the theme also applies a terminal UI:
 
