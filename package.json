@@ -1,0 +1,13 @@
+{
+  "name": "paseo-terminal-theme-plugin",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A terminal-inspired xterm-256 theme for Paseo 0.5.2.",
+  "license": "MIT",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
