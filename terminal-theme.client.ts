@@ -110,14 +110,24 @@ const TERMINAL_STYLES = `
 }
 
 @keyframes terminal-status-pulse {
-  0%, 100% {
+  0% {
     transform: scale(0.75);
     opacity: 0.45;
   }
 
-  45% {
+  25%, 75% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
     transform: scale(1.5);
     opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.75);
+    opacity: 0.45;
   }
 }
 
@@ -126,7 +136,7 @@ const TERMINAL_STYLES = `
   [data-testid="workspace-status-indicator-loading"]
 ) > div > div:last-child,
 :root.pluginDark #root [data-testid="project-status-badge"] > div > div:last-child {
-  animation: terminal-status-pulse 1.8s ease-in-out infinite !important;
+  animation: terminal-status-pulse 2.4s step-end infinite !important;
   transform-origin: center !important;
 }
 
