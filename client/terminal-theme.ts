@@ -361,12 +361,12 @@ const TERMINAL_STYLES = `
 }
 `;
 
-function installTerminalStyles(): void {
+export function installTerminalStyles(): () => void {
   if (typeof document === "undefined") {
     console.warn(
       "[paseo-terminal-theme-plugin] DOM styling unavailable; using color tokens only."
     );
-    return;
+    return () => {};
   }
 
   const existing = document.getElementById(STYLE_ELEMENT_ID);
@@ -380,6 +380,6 @@ function installTerminalStyles(): void {
   if (!style.isConnected) {
     document.head.appendChild(style);
   }
-}
 
-installTerminalStyles();
+  return () => style.remove();
+}

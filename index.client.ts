@@ -1,7 +1,7 @@
-import type { PluginContext } from "@getpaseo/plugin";
-import "./terminal-theme.client";
+import type { PluginClientContext } from "@getpaseo/plugin/client";
+import { installTerminalStyles } from "./client/terminal-theme";
 
-export default function contribute(plugin: PluginContext) {
+export default function contribute(plugin: PluginClientContext) {
   plugin.addTheme({
     id: "terminal-256",
     name: "Terminal 256",
@@ -18,5 +18,5 @@ export default function contribute(plugin: PluginContext) {
     }
   });
 
-  return () => {};
+  return installTerminalStyles();
 }

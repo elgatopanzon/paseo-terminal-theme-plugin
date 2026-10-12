@@ -1,6 +1,6 @@
 # Terminal 256
 
-A Paseo 0.5.2 plugin that contributes the **Terminal 256** dark theme. Its
+A Paseo 0.11.2 plugin that contributes the **Terminal 256** dark theme. Its
 colors are selected from the standard xterm-256 palette, with a black canvas,
 phosphor-green accent, dark-gray focus details, and grayscale surfaces.
 
@@ -20,16 +20,20 @@ On web and desktop-web clients, selecting the theme also applies a terminal UI:
 - workspace agent tabs that sit flush with the tab strip;
 - CSS variables `--terminal-color-0` through `--terminal-color-255`.
 
-## Paseo 0.5.2 compatibility
+## Compatibility
 
-Paseo 0.5.2 theme contributions officially expose colors only. The typography,
-line-height, and square-corner rules therefore use a guarded client stylesheet
+The plugin targets Paseo `>=0.11.2 <0.12.0` using its client runtime entry and
+the matching plugin SDK. Earlier versions require the pre-migration plugin.
+
+The theme contributes colors through Paseo's API. The typography,
+line-height, and square-corner rules use a guarded client stylesheet
 scoped to Paseo's `pluginDark` active-theme class. Native iOS and Android clients
 receive the contributed colors but retain native typography and corner geometry.
 
-Because Paseo 0.5.2 uses the shared `pluginDark` class for every contributed dark
-theme, the web stylesheet remains active if another contributed dark theme is
-selected while this plugin is loaded. This is an upstream 0.5.2 scoping limit.
+The stylesheet depends on private UI selectors, including the `pluginDark`
+class originally used by Paseo 0.5.2. UI changes can require selector updates;
+clients sharing that class between dark plugin themes also share these styles.
+The stylesheet is removed when the plugin is unloaded.
 
 ## Validate
 
